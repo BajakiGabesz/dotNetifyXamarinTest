@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+    <PackageReference Include="Autofac" Version="6.2.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="DotNetify.Core" />
+    <None Remove="DotNetify.SignalR" />
+    <None Remove="Autofac" />
+    <None Remove="Bootstrap\" />
+    <None Remove="Helpers\" />
+    <None Remove="Views\" />
+    <None Remove="ViewModels\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Bootstrap\" />
+    <Folder Include="Helpers\" />
+    <Folder Include="Views\" />
+    <Folder Include="ViewModels\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\dotNetify\DotNetifyLib.SignalR\DotNetifyLib.SignalR.csproj" />
+    <ProjectReference Include="..\dotNetify\DotNetifyLib.Core\DotNetifyLib.Core.csproj" />
+  </ItemGroup>
+</Project>

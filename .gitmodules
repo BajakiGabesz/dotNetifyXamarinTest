@@ -1,0 +1,3 @@
+[submodule "dotNetify"]
+	path = dotNetify
+	url = https://github.com/dsuryd/dotNetify.git
